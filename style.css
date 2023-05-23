@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000");
+    background-image: url("anime.avif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7,7 +7,7 @@ body {
 
 canvas {
     animation-name: example;
-    animation-duration: 5s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
 }
 

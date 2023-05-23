@@ -1,32 +1,24 @@
-left_eyeX = 0
-left_eyeY = 0
-right_eyeX = 0
-right_eyeY = 0
-crown_X = 0
-crown_Y = 0
+m_X = 0
+m_Y = 0
 
 function preload() {
-    Right = loadImage("right.png");
-    Left = loadImage("left.png");
-    Crown = loadImage("crown.png");
+    mustache = loadImage("mustache.png");
 
 }
 
 function setup() {
-    canvas = createCanvas(600, 400);
+    canvas = createCanvas(400, 400);
     video = createCapture(VIDEO);
     video.hide();
     canvas.center();
 
     poseNet = ml5.poseNet(video, modelLoaded);
-    poseNet.on('pose', gotResult)
+    poseNet.on('pose', gotResult);
 }
 
 function draw() {
-    image(video, 0, 0, 600, 400);
-    image(Right, right_eyeX, right_eyeY, 30, 30);
-    image(Left, left_eyeX, left_eyeY, 30, 30);
-    image(Crown, crown_X, crown_Y, 250, 250);
+    image(video, 0, 0, 400, 400);
+    image(mustache, m_X, m_Y, 50, 50);
 }
 
 function modelLoaded() {
@@ -36,14 +28,10 @@ function modelLoaded() {
 function gotResult(result) {
     if (result.length > 0) {
         console.log(result)
-        left_eyeX = result[0].pose.leftEye.x - 40;
-        left_eyeY = result[0].pose.leftEye.y;
-        right_eyeX = result[0].pose.rightEye.x - 40;
-        right_eyeY = result[0].pose.rightEye.y;
-        crown_X = result[0].pose.nose.x - 10;
-        crown_Y = result[0].pose.nose.y - 250;
-
+        m_X = result[0].pose.nose.x - 200;
+        m_Y = result[0].pose.nose.y - 20;
     }
+
 }
 
 function take_snapshot() {
