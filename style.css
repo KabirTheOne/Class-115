@@ -1,0 +1,21 @@
+body {
+    background-image: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+canvas {
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    from {
+        box-shadow: 5px 5px 50px red;
+    }
+    to {
+        box-shadow: 5px 5px 50px rgb(255, 0, 157);
+    }
+}
